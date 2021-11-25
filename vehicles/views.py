@@ -7,6 +7,7 @@ from django.views         import View
 from django.db            import transaction
 
 from users.models    import User
+from users.decorator import login_decorator
 from vehicles.models import Vehicle, FrontTire, RearTire
 from vehicles.regex  import tire_validator
 
@@ -98,15 +99,15 @@ class TireView(View):
         except KeyError:
             return JsonResponse({'MESSAGE':'KEY_ERROR'}, status=400)
 
+    @login_decorator
     def get(self, request):
         try:
             data = json.loads(request.body)
             user_email = data['id']
+            user       = request.user
 
             if not User.objects.filter(email=user_email).exists():
                 return JsonResponse({'MESSAGE':f'non-existing user: {user_email}'}, status=404)
-
-            user = User.objects.get(email=user_email)
 
             vehicles = Vehicle.objects.filter(user_id=user.id)
 
