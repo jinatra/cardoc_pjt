@@ -7,23 +7,21 @@
 
 - Postman
 
-- DB  : sqlite3
+- DB  : MySQL
 
-- 배포 :AWS EC2 with Nginx, Gunicorn
+- 배포 :AWS EC2
 
 ## 🟡 Contributors
 |이름 |담당 기능| GitHub 주소|
 |------|---|---|
-|김도담|모델링, 입,출금 API| [damdream](http://github.com/damdream)|
-|성우진|모델링, 거래내역 조회 API | [jinatra](http://github.com/jinatra)|
-|이정우|배포| [acdacd66](http://github.com/acdacd66)|
+|성우진| 전체 프로젝트 | [jinatra](http://github.com/jinatra)|
 
 ## 🟡 빌드 및 실행 방법
-- repo 폴더안의 requirements.text 파일을 install 한다.
+- requirements.text 파일을 install 한다.
 pip install -r requirements.txt
 - python manage.py runserver를 통해 서버를 실행한다.
 <br>
-- [POSTMAN API 문서](https://documenter.getpostman.com/view/16843875/UVC8CR6j) 를 통해 확인 가능합니다.
+- [POSTMAN API 문서](https://documenter.getpostman.com/view/17234940/UVJbGwv6) 를 통해 확인 가능합니다.
 <br>
 
 ## 🟡 기본 설계
