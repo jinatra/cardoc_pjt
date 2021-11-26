@@ -86,4 +86,4 @@ pip install -r requirements.txt
 
 ## 🟡 프로젝트 회고
 
-- 성우진: [블로그](https://velog.io/@jinatra)
+- 성우진: [블로그](https://velog.io/@jinatra/카닥-기업협업-과제-후기)
