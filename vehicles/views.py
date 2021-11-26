@@ -103,11 +103,11 @@ class TireView(View):
     def get(self, request):
         try:
             data = json.loads(request.body)
-            user_email = data['id']
-            user       = request.user
+            input_email = data['id']
+            user        = request.user
 
-            if not User.objects.filter(email=user_email).exists():
-                return JsonResponse({'MESSAGE':f'non-existing user: {user_email}'}, status=404)
+            if not input_email == user.email:
+                return JsonResponse({'MESSAGE':'unmatched user: token and input email'}, status=409)
 
             vehicles = Vehicle.objects.filter(user_id=user.id)
 
