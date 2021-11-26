@@ -25,12 +25,16 @@ pip install -r requirements.txt
 <br>
 
 ## 🟡 기본 설계
-![image](https://user-images.githubusercontent.com/81546305/141465168-efdb4b70-05ed-42a2-8bec-d525d2451037.png)
+<img width="951" alt="스크린샷 2021-11-23 오후 5 10 33" src="https://user-images.githubusercontent.com/85162752/143542040-ecf5b637-52e9-42b9-acff-3e14e7aac96f.png">
 
 
-- User, Account, Transaction 총 세개의 테이블로 구성하였습니다.
-- User는 기본적인 가입, 로그인/회원가입, 데코레이터를 구현했고, Account는 User와 연결된 계좌의 잔고와 기본적인 입금/출금 기능을 구행하는 테이블입니다.
-- Transaction은 거래내역을 담은 테이블로 거래 시간, 잔고, 적요, 등을 담았습니다.
+
+- User, Vehicle, FrontTire, RearTire 총 네개의 테이블로 구성하였습니다.
+
+- 모델링 시 고려했던 사항
+  - 유저의 경우 이메일에 `unique`를 부여하였습니다.
+  - 한 유저가 여러 차량을 가질 수 있도록 하였고, 본 모델링에서는 주어진 dev data 중 `model_name`을 기반으로 차량의 고유성을 설정하였습니다.
+  - 서로 다른 차량의 경우에도 동일한 타이어 스펙을 가질 수 있다고 판단하여, 차량 테이블에 타이어 정보를 합치지 않고 분할하여 고유성을 갖도록 하였습니다. (같은 스펙의 타이어의 경우 데이터 하나로 관리 가능)
 
 
 ## 🟡 구현 내용
